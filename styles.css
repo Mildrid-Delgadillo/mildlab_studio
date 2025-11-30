@@ -1,0 +1,275 @@
+/* --- VARIABLES & RESET (Basado en Brief de Marca) --- */
+:root {
+    --primary-blue: #3A7DFF;       /* Azul Eléctrico */
+    --accent-orange: #FF6F4F;      /* Naranja Coral */
+    --accent-mint: #00DFA2;        /* Verde Menta */
+    --dark-bg: #1F1F1F;            /* Gris Grafito */
+    --light-bg: #F5F5F5;           /* Blanco Hueso */
+    --font-title: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+    font-weight: 700;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-title);
+    letter-spacing: -1px;
+}
+
+.logo .dot { color: var(--accent-orange); }
+
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover { color: var(--primary-blue); }
+
+.btn-contact {
+    background-color: var(--primary-blue);
+    color: white !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(31, 31, 31, 0.7); /* Oscurecer para leer texto */
+    z-index: -1;
+}
+
+.hero-content { color: white; max-width: 800px; padding: 20px; }
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content .highlight {
+    color: var(--accent-mint); /* Toque tech */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover { transform: translateY(-3px); }
+
+/* --- SECCIONES GENERALES --- */
+section { padding: 5rem 0; }
+
+/* --- SOBRE MÍ / FILOSOFÍA --- */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-text { flex: 1; }
+.about-image { flex: 1; }
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px var(--primary-blue); /* Estilo gráfico */
+}
+
+.tag {
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.about-text h2 { font-size: 2.5rem; margin: 1rem 0; }
+.about-text p { margin-bottom: 1.5rem; color: #555; }
+
+.stats { display: flex; gap: 3rem; margin-top: 2rem; }
+.stats h3 { font-size: 2rem; color: var(--primary-blue); }
+
+/* --- SERVICIOS (GRID) --- */
+.services-section { background-color: #fff; }
+
+.section-title { text-align: center; margin-bottom: 3rem; }
+.section-title h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--light-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-img { height: 200px; overflow: hidden; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.card:hover .card-img img { transform: scale(1.1); }
+
+.card-content { padding: 1.5rem; }
+.card-content h3 { margin-bottom: 0.5rem; color: var(--primary-blue); }
+.card-content p { font-size: 0.9rem; color: #666; }
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 4rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h2 { font-size: 2rem; margin-bottom: 1rem; }
+.socials a { color: var(--accent-mint); margin-right: 10px; }
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .split-layout { flex-direction: column; }
+    .footer-content { flex-direction: column; gap: 2rem; text-align: center; }
+}
+
+/* --- ESTILOS DEL FORMULARIO DE CONTACTO --- */
+
+.contact-form-wrapper {
+    padding-left: 2rem;
+}
+
+.form-style {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-bg);
+}
+
+.form-style input, 
+.form-style textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+/* Efecto al hacer clic en el campo (Focus) usando tu Azul Eléctrico */
+.form-style input:focus, 
+.form-style textarea:focus {
+    border-color: var(--primary-blue);
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 125, 255, 0.1);
+}
+
+/* Ajuste Responsive para el formulario */
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+}
